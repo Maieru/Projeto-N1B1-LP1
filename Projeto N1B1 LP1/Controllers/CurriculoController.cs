@@ -20,5 +20,20 @@ namespace Projeto_N1B1_LP1.Controllers
                 return View("Error", erro);
             }
         }
+
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                var curriculoDAO = new CurriculoDAO();
+                curriculoDAO.Delete(id);
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception erro)
+            {
+                return View("Error", erro);
+            }
+        }
     }
 }

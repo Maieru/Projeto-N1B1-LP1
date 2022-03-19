@@ -17,7 +17,7 @@ table.tablePrincipal {
     margin-left: 3%;
     overflow-y: auto;
     overflow-x: unset;
-    max-height: 460px;
+    max-height: 440px;
 }
 
 .tablePrincipal th {
