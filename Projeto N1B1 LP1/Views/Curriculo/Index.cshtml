@@ -1,1 +1,40 @@
-﻿Alguma coisa 
+﻿@model List<CurriculoViewModel>
+
+<div class="principal">
+    <div class="divCabecalho">
+        <button class="btn btn-outline-dark" style="margin-top: 20px;" type="button">Criar Novo Curriculo</button>
+    </div>
+    <div>
+        <table class="table table-responsive tablePrincipal">
+            <thead>
+                <tr>
+                    <th class="text-center">Ações</th>
+                    <th class="text-center">CPF</th>
+                    <th class="text-center">Nome</th>
+                    <th class="text-center">Telefone</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Cargo Pretendido</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var curriculo in Model)
+                {
+                    <tr>
+                        <td class="align-middle">
+                            <button type="button" class="btn btn-outline-info" href="Curriculo/Delete/@curriculo.Id">Visualizar</button>
+                            <button type="button" class="btn btn-outline-success" href="Curriculo/Delete/@curriculo.Id">Editar</button>
+                            <button type="button" class="btn btn-outline-danger" href="Curriculo/Delete/@curriculo.Id">Apagar</button>
+                        </td>
+                        <td class="text-center align-middle">@curriculo.CPF</td>
+                        <td class="text-center align-middle">@curriculo.Nome</td>
+                        <td class="text-center align-middle">@curriculo.Telefone</td>
+                        <td class="text-center align-middle">@curriculo.Email</td>
+                        <td class="text-center align-middle">@curriculo.CargoPretendido</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<link href="~/css/IndexCurriculo.css" rel="stylesheet" />
