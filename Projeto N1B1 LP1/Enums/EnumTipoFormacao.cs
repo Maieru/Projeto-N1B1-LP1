@@ -2,13 +2,14 @@
 {
     public enum EnumTipoFormacao
     {
-        Fundamental = 0,
-        Medio = 1,
-        Tecnico = 2,
-        Tecnologo = 3,
-        Superior = 4,
-        Pos = 5,
-        Mestrado = 6,
-        Doutorado = 7,
+        None = 0,
+        Fundamental = 1,
+        Medio = 2,
+        Tecnico = 3,
+        Tecnologo = 4,
+        Superior = 5,
+        Pos = 6,
+        Mestrado = 7,
+        Doutorado = 8,
     }
 }

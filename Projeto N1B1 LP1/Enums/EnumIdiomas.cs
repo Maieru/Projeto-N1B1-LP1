@@ -2,13 +2,14 @@
 {
     public enum EnumIdiomas
     {
-        Portugues = 0,
-        Ingles = 1,
-        Espanhol = 2,
-        Frances = 3,
-        Alemao = 4,
-        Mandarim = 5,
-        Arabe = 6,
-        Japones = 7,
+        None = 0,
+        Portugues = 1,
+        Ingles = 2,
+        Espanhol = 3,
+        Frances = 4,
+        Alemao = 5,
+        Mandarim = 6,
+        Arabe = 7,
+        Japones = 8,
     }
 }

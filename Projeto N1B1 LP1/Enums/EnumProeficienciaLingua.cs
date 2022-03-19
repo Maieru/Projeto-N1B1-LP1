@@ -2,9 +2,10 @@
 {
     public enum EnumProeficienciaLingua
     {
-        Basico = 0,
-        Intermediario = 1,
-        Avancado = 2,
-        Fluente = 3,
+        None = 0,
+        Basico = 1,
+        Intermediario = 2,
+        Avancado = 3,
+        Fluente = 4,
     }
 }

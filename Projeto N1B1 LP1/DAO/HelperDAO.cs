@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exercicio_11._1.DAO
+namespace Projeto_N1B1_LP1.DAO
 {
     public static class HelperDAO
     {
