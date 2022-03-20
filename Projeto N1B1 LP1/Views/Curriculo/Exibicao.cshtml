@@ -1,12 +1,16 @@
 ﻿@using Projeto_N1B1_LP1.Enums
 @model CurriculoViewModel;
-<div class="container" style="font-family: Cambria">
-    <header>
-        <button class="btn btn-primary" type="button" style="margin-left: 1%;height: 40px;">
-            Voltar
-        </button>
-        <h1 style="text-align: center;"><b>@Model.Nome</b></h1>
-    </header>
+
+<header>
+    <button onclick="javascript:history.back()" class="btn btn-primary" type="button" style="margin-left: 1%;height: 40px;">
+        Voltar
+    </button>
+    <button onclick="javascript:Print()" class="btn btn-info" type="button" style="margin-left: 1%;height: 40px;">
+        Imprimir
+    </button>
+</header>
+<div class="container" id="Curriculo" style="font-family: Cambria">
+    <h1 style="text-align: center;"><b>@Model.Nome</b></h1>
     <hr style="border-width: 5px;border-color: black;">
     <h4>
         <i>
@@ -104,10 +108,10 @@
         <br>
     }
     @if (Model.Idioma1 != EnumIdiomas.None ||
-         Model.Idioma2 != EnumIdiomas.None ||
-         Model.Idioma3 != EnumIdiomas.None ||
-         Model.Idioma4 != EnumIdiomas.None ||
-         Model.Idioma5 != EnumIdiomas.None)
+    Model.Idioma2 != EnumIdiomas.None ||
+    Model.Idioma3 != EnumIdiomas.None ||
+    Model.Idioma4 != EnumIdiomas.None ||
+    Model.Idioma5 != EnumIdiomas.None)
     {
         <h3 style="text-align: center;background-color: #DEDEDE;">
             <b>Idiomas</b>
@@ -172,3 +176,6 @@
         </h4>
     }
 </div>
+
+<link href="~/css/VisualizarCurriculo.css" rel="stylesheet" />
+<script src="~/js/PrintCurriculo.js"></script>
