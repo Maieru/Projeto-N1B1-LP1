@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Projeto_N1B1_LP1.DAO;
+using Projeto_N1B1_LP1.Models;
 using System;
 
 namespace Projeto_N1B1_LP1.Controllers
@@ -34,6 +35,31 @@ namespace Projeto_N1B1_LP1.Controllers
             {
                 return View("Error", erro);
             }
+        }
+
+        public IActionResult Create()
+        {
+            return View("Create");
+        }
+
+        public IActionResult Post(CurriculoViewModel curriculoViewModel, bool edicao)
+        {
+            try
+            {
+                var curriculoDAO = new CurriculoDAO();
+
+                if (edicao)
+                    curriculoDAO.Edit(curriculoViewModel);
+                else
+                    curriculoDAO.Insert(curriculoViewModel);
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception erro)
+            {
+                return View("Error", erro);
+            }
+
         }
 
         public IActionResult Visualizar(int id)

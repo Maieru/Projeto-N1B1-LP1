@@ -1,4 +1,5 @@
-﻿@model CurriculoViewModel;
+﻿@using Projeto_N1B1_LP1.Enums
+@model CurriculoViewModel;
 <div class="container" style="font-family: Cambria">
     <header>
         <button class="btn btn-primary" type="button" style="margin-left: 1%;height: 40px;">
@@ -17,11 +18,26 @@
     <h4>
         <ul>
             <li>@Model.TipoFormacao1 | @Model.DataInicioFormacao1-@Model.DataTerminoFormacao1</li>
-            <li>@Model.TipoFormacao2 | @Model.DataInicioFormacao2-@Model.DataTerminoFormacao2</li>
-            <li>@Model.TipoFormacao3 | @Model.DataInicioFormacao3-@Model.DataTerminoFormacao3</li>
-            <li>@Model.TipoFormacao4 | @Model.DataInicioFormacao4-@Model.DataTerminoFormacao4</li>
-            <li>@Model.TipoFormacao5 | @Model.DataInicioFormacao5-@Model.DataTerminoFormacao5</li>
 
+            @if (Model.TipoFormacao2 != EnumTipoFormacao.None)
+            {
+                <li>@Model.TipoFormacao2 | @Model.DataInicioFormacao2-@Model.DataTerminoFormacao2</li>
+            }
+
+            @if (Model.TipoFormacao3 != EnumTipoFormacao.None)
+            {
+                <li>@Model.TipoFormacao3 | @Model.DataInicioFormacao3-@Model.DataTerminoFormacao3</li>
+            }
+
+            @if (Model.TipoFormacao4 != EnumTipoFormacao.None)
+            {
+                <li>@Model.TipoFormacao4 | @Model.DataInicioFormacao4-@Model.DataTerminoFormacao4</li>
+            }
+
+            @if (Model.TipoFormacao5 != EnumTipoFormacao.None)
+            {
+                <li>@Model.TipoFormacao5 | @Model.DataInicioFormacao5-@Model.DataTerminoFormacao5</li>
+            }
         </ul>
     </h4>
     <br>
@@ -29,10 +45,20 @@
 
     <h4>
         <ul>
-            <li>@Model.CargoOcupadoExp1 | @Model.DataInicioExp1-@Model.DataTerminoExp1</li>
-            <li>@Model.CargoOcupadoExp2 | @Model.DataInicioExp2-@Model.DataTerminoExp2</li>
-            <li>@Model.CargoOcupadoExp3 | @Model.DataInicioExp3-@Model.DataTerminoExp3</li>
+            @if (Model.CargoOcupadoExp1 != null)
+            {
+                <li>@Model.CargoOcupadoExp1 | @Model.DataInicioExp1-@Model.DataTerminoExp1</li>
+            }
 
+            @if (Model.CargoOcupadoExp2 != null)
+            {
+                <li>@Model.CargoOcupadoExp2 | @Model.DataInicioExp2-@Model.DataTerminoExp2</li>
+            }
+
+            @if (Model.CargoOcupadoExp3 != null)
+            {
+                <li>@Model.CargoOcupadoExp3 | @Model.DataInicioExp3-@Model.DataTerminoExp3</li>
+            }
         </ul>
     </h4>
     <br>
@@ -41,11 +67,29 @@
     </h3><br />
     <h4>
         <ul>
-            <li>@Model.Idioma1 @Model.FalarIdioma1 para fala, @Model.LeituraIdioma1 para leitura e @Model.EscutarIdioma1 para escutar</li>
-            <li>@Model.Idioma2 @Model.FalarIdioma2 para fala, @Model.LeituraIdioma2 para leitura e @Model.EscutarIdioma2 para escutar</li>
-            <li>@Model.Idioma3 @Model.FalarIdioma3 para fala, @Model.LeituraIdioma3 para leitura e @Model.EscutarIdioma3 para escutar</li>
-            <li>@Model.Idioma4 @Model.FalarIdioma4 para fala, @Model.LeituraIdioma4 para leitura e @Model.EscutarIdioma4 para escutar</li>
-            <li>@Model.Idioma5 @Model.FalarIdioma5 para fala, @Model.LeituraIdioma5 para leitura e @Model.EscutarIdioma5 para escutar</li>
-        </ul>
+            @if (Model.Idioma1 != EnumIdiomas.None)
+            {
+                <li>@Model.Idioma1 @Model.FalarIdioma1 para fala, @Model.LeituraIdioma1 para leitura e @Model.EscutarIdioma1 para escutar</li>
+            }
+
+            @if (Model.Idioma2 != EnumIdiomas.None)
+            {
+                <li>@Model.Idioma2 @Model.FalarIdioma2 para fala, @Model.LeituraIdioma2 para leitura e @Model.EscutarIdioma2 para escutar</li>
+            }
+
+            @if (Model.Idioma3 != EnumIdiomas.None)
+            {
+                <li>@Model.Idioma3 @Model.FalarIdioma3 para fala, @Model.LeituraIdioma3 para leitura e @Model.EscutarIdioma3 para escutar</li>
+            }
+
+            @if (Model.Idioma4 != EnumIdiomas.None)
+            {
+                <li>@Model.Idioma4 @Model.FalarIdioma4 para fala, @Model.LeituraIdioma4 para leitura e @Model.EscutarIdioma4 para escutar</li>
+            }
+
+            @if (Model.Idioma5 != EnumIdiomas.None)
+            {
+                <li>@Model.Idioma5 @Model.FalarIdioma5 para fala, @Model.LeituraIdioma5 para leitura e @Model.EscutarIdioma5 para escutar</li>
+            }
     </h4>
 </div>

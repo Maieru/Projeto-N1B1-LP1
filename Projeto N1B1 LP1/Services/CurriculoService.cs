@@ -22,31 +22,26 @@ namespace Projeto_N1B1_LP1.Services
 
             curriculoViewModel.TipoFormacao1 = (EnumTipoFormacao)registro["TIPO_FORMACAO_1"];
             curriculoViewModel.TituloFormacao1 = LeValorRegistro<string>(registro["TITULO_FORMACAO_1"]);
-            curriculoViewModel.DescricaoFormacao1 = LeValorRegistro<string>(registro["DESCRICAO_FORMACAO_1"]);
             curriculoViewModel.DataInicioFormacao1 = LeValorRegistro<DateTime>(registro["DATA_INICIO_FORMACAO_1"]);
             curriculoViewModel.DataTerminoFormacao1 = LeValorRegistro<DateTime>(registro["DATA_TERMINO_FORMACAO_1"]);
             
             curriculoViewModel.TipoFormacao2 = (EnumTipoFormacao)registro["TIPO_FORMACAO_2"];
             curriculoViewModel.TituloFormacao2 = LeValorRegistro<string>(registro["TITULO_FORMACAO_2"]);
-            curriculoViewModel.DescricaoFormacao2 = LeValorRegistro<string>(registro["DESCRICAO_FORMACAO_2"]);
             curriculoViewModel.DataInicioFormacao2 = LeValorRegistro<DateTime?>(registro["DATA_INICIO_FORMACAO_2"]);
             curriculoViewModel.DataTerminoFormacao2 = LeValorRegistro<DateTime?>(registro["DATA_TERMINO_FORMACAO_2"]);
 
             curriculoViewModel.TipoFormacao3 = (EnumTipoFormacao)registro["TIPO_FORMACAO_3"];
             curriculoViewModel.TituloFormacao3 = LeValorRegistro<string>(registro["TITULO_FORMACAO_3"]);
-            curriculoViewModel.DescricaoFormacao3 = LeValorRegistro<string>(registro["DESCRICAO_FORMACAO_3"]);
             curriculoViewModel.DataInicioFormacao3 = LeValorRegistro<DateTime?>(registro["DATA_INICIO_FORMACAO_3"]);
             curriculoViewModel.DataTerminoFormacao3 = LeValorRegistro<DateTime?>(registro["DATA_TERMINO_FORMACAO_3"]);
 
             curriculoViewModel.TipoFormacao4 = (EnumTipoFormacao)registro["TIPO_FORMACAO_4"];
             curriculoViewModel.TituloFormacao4 = LeValorRegistro<string>(registro["TITULO_FORMACAO_4"]);
-            curriculoViewModel.DescricaoFormacao4 = LeValorRegistro<string>(registro["DESCRICAO_FORMACAO_4"]);
             curriculoViewModel.DataInicioFormacao4 = LeValorRegistro<DateTime?>(registro["DATA_INICIO_FORMACAO_4"]);
             curriculoViewModel.DataTerminoFormacao4 = LeValorRegistro<DateTime?>(registro["DATA_TERMINO_FORMACAO_4"]);
 
             curriculoViewModel.TipoFormacao5 = (EnumTipoFormacao)registro["TIPO_FORMACAO_5"];
             curriculoViewModel.TituloFormacao5 = LeValorRegistro<string>(registro["TITULO_FORMACAO_5"]);
-            curriculoViewModel.DescricaoFormacao5 = LeValorRegistro<string>(registro["DESCRICAO_FORMACAO_5"]);
             curriculoViewModel.DataInicioFormacao5 = LeValorRegistro<DateTime?>(registro["DATA_INICIO_FORMACAO_5"]);
             curriculoViewModel.DataTerminoFormacao5 = LeValorRegistro<DateTime?>(registro["DATA_TERMINO_FORMACAO_5"]);
 

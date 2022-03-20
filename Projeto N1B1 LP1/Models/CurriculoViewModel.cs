@@ -20,31 +20,26 @@ namespace Projeto_N1B1_LP1.Models
 
         public EnumTipoFormacao TipoFormacao1 { get; set; }
         public string TituloFormacao1 { get; set; }
-        public string DescricaoFormacao1 { get; set; }
         public DateTime DataInicioFormacao1 { get; set; }
         public DateTime DataTerminoFormacao1 { get; set; }
 
         public EnumTipoFormacao TipoFormacao2 { get; set; }
         public string TituloFormacao2 { get; set; }
-        public string DescricaoFormacao2 { get; set; }
         public DateTime? DataInicioFormacao2 { get; set; }
         public DateTime? DataTerminoFormacao2 { get; set; }
 
         public EnumTipoFormacao TipoFormacao3 { get; set; }
         public string TituloFormacao3 { get; set; }
-        public string DescricaoFormacao3 { get; set; }
         public DateTime? DataInicioFormacao3 { get; set; }
         public DateTime? DataTerminoFormacao3 { get; set; }
 
         public EnumTipoFormacao TipoFormacao4 { get; set; }
         public string TituloFormacao4 { get; set; }
-        public string DescricaoFormacao4 { get; set; }
         public DateTime? DataInicioFormacao4 { get; set; }
         public DateTime? DataTerminoFormacao4 { get; set; }
 
         public EnumTipoFormacao TipoFormacao5 { get; set; }
         public string TituloFormacao5 { get; set; }
-        public string DescricaoFormacao5 { get; set; }
         public DateTime? DataInicioFormacao5 { get; set; }
         public DateTime? DataTerminoFormacao5 { get; set; }
 

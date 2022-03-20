@@ -12,7 +12,10 @@ namespace Projeto_N1B1_LP1.DAO
     {
         public static SqlConnection GetDbConnection()
         {
-            string connectionString = "server = .\\SQLexpress; database=TrabalhoLP1N1B1; integrated security = true";
+            // Connection String Kauan
+            //string connectionString = "server = .\\SQLexpress; database=TrabalhoLP1N1B1; integrated security = true";
+            
+            string connectionString = "server = LOCALHOST; database=TrabalhoLP1N1B1; integrated security = true";
 
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();

@@ -32,7 +32,6 @@ namespace Projeto_N1B1_LP1
 
                         TipoFormacao1 = EnumTipoFormacao.Superior,
                         TituloFormacao1 = "Bacharel Em Ser Ana Maria Braga",
-                        DescricaoFormacao1 = "Bacharelada em ser braba",
                         DataInicioFormacao1 = DateTime.Now,
                         DataTerminoFormacao1 = DateTime.Now,
 

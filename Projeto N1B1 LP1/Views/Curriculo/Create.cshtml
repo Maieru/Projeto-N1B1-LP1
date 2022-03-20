@@ -1,17 +1,20 @@
 ﻿<link href="~/css/CreateCurriculo.css" rel="stylesheet" />
-<body style="background-color: #23527c"></body>
-<br />
-<body>
-</body>
-<h1>Criação de novos currículos </h1>
+
+<div class="formataDiv">
+    <br/>
+    <h1 class="tituloPagina">Criação de novos currículos </h1>
+    <br/>
+</div>
 <br />
 <hr />
-<br />
-<form>
-    <h3>Informações Pessoais</h3>
+<form asp-action="Post">
+    <input type="text" name="edicao" value="false" hidden />
     <section class="py-3">
         <div class="container">
             <div class="row grid-divider formataDiv">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <h3>Informações Pessoais</h3>
+                </div>
                 <div class="col-sm-12 col-md-6 col-lg-4 my-1">
                     <div class="card-body">
                         Nome <br />
@@ -42,121 +45,159 @@
         </div>
     </section>
     <hr />
-    <h3>Formações academicas</h3>
     <section>
         <div class="container">
             <div class="row grid-divider formataDiv">
-                <div class="col-sm-12 col-md-6 col-lg-6 my-1">
-                    <div class="card-body">
-                        Tipo Formação <br />
-                        <select class="form-control" name="medidas" value="med">
-                            <option value="1">Fundamental</option>
-                            <option value="2">Medio</option>
-                            <option value="3">Tecnico</option>
-                            <option value="4">Tecnologo</option>
-                            <option value="5">Superior</option>
-                            <option value="6">Pos</option>
-                            <option value="7">Mestrado</option>
-                            <option value="8">Doutorado</option>
-                        </select> <br />
-                        Nome da Formação <br />
-                        <input class="form-control" type="text" name="TituloFormacao1" /> <br />
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <h3>Formações academicas</h3>
+                </div>
+                <div id="ConteudoInterno" class="row ConteudoInterno">
+                    <div id="Formacao1" class="row innerContent">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <input class="btn btn-danger" type="button" value="Excluir" />    <br />
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6 my-1">
+                            <div class="card-body">
+                                Tipo Formação <br />
+                                <select class="form-control" name="medidas" value="med">
+                                    <option value="1">Fundamental</option>
+                                    <option value="2">Medio</option>
+                                    <option value="3">Tecnico</option>
+                                    <option value="4">Tecnologo</option>
+                                    <option value="5">Superior</option>
+                                    <option value="6">Pos</option>
+                                    <option value="7">Mestrado</option>
+                                    <option value="8">Doutorado</option>
+                                </select> <br />
+                                Nome da Formação <br />
+                                <input class="form-control" type="text" name="TituloFormacao1" /> <br />
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6 my-1">
+                            <div class="card-body">
+                                Data de início <br />
+                                <input class="form-control" type="date" name="DataInicioFormacao1" /> <br />
+                                Data de Término <br />
+                                <input class="form-control" type="date" name="DataTerminoFormacao1" /> <br />
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-6 my-1">
-                    <div class="card-body">
-                        Data de início <br />
-                        <input class="form-control" type="date" name="DataInicioFormacao1" /> <br />
-                        Data de Término <br />
-                        <input class="form-control" type="date" name="DataTerminoFormacao1" /> <br />
-                    </div>
+                <div class="col-md-12">
+                    <input class="btn btn-success" type="button" value="Adicionar mais" />    <br />
                 </div>
             </div>
         </div>
     </section>
     <br />
-    <input class="btn btn-success" type="submit" value="Adicionar mais" />    <br />
     <br />
     <hr />
-    <h3>Experiências profissionais</h3>
     <section>
         <div class="container">
             <div class="row grid-divider formataDiv">
-                <div class="col-sm-12 col-md-6 col-lg-6 my-1">
-                    <div class="card-body">
-                        Empresa <br />
-                        <input class="form-control" type="text" name="empresa" /> <br />
-                        Função  <br />
-                        <input class="form-control" type="text" name="CargoOcupadoExp1" /> <br />
-                        Data início <br />
-                        <input class="form-control" type="date" name="DataInicioExp1 " /> <br />
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <h3>Experiências profissionais</h3>
+                </div>
+                <div id="ConteudoInterno" class="row ConteudoInterno">
+                    <div id="ExperienciaProfissional1" class="row innerContent">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <input class="btn btn-danger" type="button" value="Excluir" />    <br />
+                        </div>
+
+                        <div class="col-sm-12 col-md-12 col-lg-12 my-1">
+                            <div class="card-body">
+                                Função  <br />
+                                <input class="form-control" type="text" name="CargoOcupadoExp1" />
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6 my-1">
+                            <div class="card-body">
+                                Data início <br />
+                                <input class="form-control" type="date" name="DataInicioExp1" />
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6 my-1">
+                            <div class="card-body">
+                                Data término <br />
+                                <input class="form-control" type="date" name="DataTerminoExp1" />
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-6 my-1">
-                    <div class="card-body">
-                        Periodo de estadia (anos) <br />
-                        <input class="form-control" type="number" name="empresa_tempo" /> <br />
-                        Setor   <br />
-                        <input class="form-control" type="text" name="empresa_setor" /> <br />
-                        Data término <br />
-                        <input class="form-control" type="date" name="DataTerminoExp1 " /> <br />
-                    </div>
+                <br />
+                <br />
+                <div class="col-md-12">
+                    <input class="btn btn-success" type="submit" value="Adicionar mais" />    <br />
                 </div>
             </div>
         </div>
     </section>
     <br />
-    <input class="btn btn-success" type="submit" value="Adicionar mais" />    <br />
     <br />
     <hr />
-    <h3>Dados de idioma</h3>
     <section>
         <div class="container">
             <div class="row grid-divider formataDiv">
-                <div class="col-lg-6">
-                    <div class="card-body">
-                        Idioma <br />
-                        <select class="form-control" name="Idioma1">
-                            <option value="1">Portugues</option>
-                            <option value="2">Ingles</option>
-                            <option value="3">Espanhol</option>
-                            <option value="4">Frances</option>
-                            <option value="5">Alemao</option>
-                            <option value="6">Mandarim</option>
-                            <option value="7">Arabe</option>
-                            <option value="8">Japones</option>
-                        </select> <br />
-                        Leitura<br />
-                        <select class="form-control" name="LeituraIdioma1">
-                            <option value="0">Básico</option>
-                            <option value="1">Intermediário</option>
-                            <option value="2">Avançado</option>
-                            <option value="3">Fluente</option>
-                        </select>
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <h3>Dados de idioma</h3>
+                </div>
+                <div id="ConteudoInterno" class="row ConteudoInterno">
+                    <div id="ExperienciaProfissional1" class="row innerContent">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <input class="btn btn-danger" type="button" value="Excluir" />    <br />
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card-body">
+                                Idioma <br />
+                                <select class="form-control" name="Idioma1">
+                                    <option value="1">Portugues</option>
+                                    <option value="2">Ingles</option>
+                                    <option value="3">Espanhol</option>
+                                    <option value="4">Frances</option>
+                                    <option value="5">Alemao</option>
+                                    <option value="6">Mandarim</option>
+                                    <option value="7">Arabe</option>
+                                    <option value="8">Japones</option>
+                                </select> <br />
+                                Leitura<br />
+                                <select class="form-control" name="LeituraIdioma1">
+                                    <option value="0">Básico</option>
+                                    <option value="1">Intermediário</option>
+                                    <option value="2">Avançado</option>
+                                    <option value="3">Fluente</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card-body">
+                                Escuta <br />
+                                <select class="form-control" name="EscutarIdioma1">
+                                    <option value="0">Básico</option>
+                                    <option value="1">Intermediário</option>
+                                    <option value="2">Avançado</option>
+                                    <option value="3">Fluente</option>
+                                </select>     <br />
+                                Fala    <br />
+                                <select class="form-control" name="FalarIdioma1">
+                                    <option value="0">Básico</option>
+                                    <option value="1">Intermediário</option>
+                                    <option value="2">Avançado</option>
+                                    <option value="3">Fluente</option>
+                                </select>     <br />
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card-body">
-                        Escuta <br />
-                        <select class="form-control" name="EscutarIdioma1">
-                            <option value="0">Básico</option>
-                            <option value="1">Intermediário</option>
-                            <option value="2">Avançado</option>
-                            <option value="3">Fluente</option>
-                        </select>     <br />
-                        Fala    <br />
-                        <select class="form-control" name="FalarIdioma1">
-                            <option value="0">Básico</option>
-                            <option value="1">Intermediário</option>
-                            <option value="2">Avançado</option>
-                            <option value="3">Fluente</option>
-                        </select>     <br />
-                    </div>
+                <div class="col-md-12">
+                    <input class="btn btn-success" type="submit" value="Adicionar mais" />    <br />
                 </div>
             </div>
         </div>
     </section>
     <br />
     <br />
-    <input class="btn btn-success" type="submit" contextmenu="Enviar" /> <input class="btn btn-success" type="submit" value="Voltar" />
+    <div class="formataDiv">
+        <input class="btn btn-success btnRodape" type="submit" contextmenu="Enviar" />
+        <input class="btn btn-success btnRodape" type="submit" value="Voltar" />
+    </div>
 </form>

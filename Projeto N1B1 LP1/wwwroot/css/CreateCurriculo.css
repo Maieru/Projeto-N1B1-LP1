@@ -1,5 +1,42 @@
-﻿.formataDiv
-{
+﻿body {
+    background-color: #23527c;
+}
+
+.formataDiv {
     background-color: white;
     border-radius: 20px;
+}
+
+h3 {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+input[value~=Adicionar] {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+input[value~=Excluir] {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.ConteudoInterno {
+    width: 100%;
+    padding-left: 0;
+    margin-left: 20px;
+}
+
+.innerContent {
+    width: 100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.btnRodape, .tituloPagina {
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 20px;
 }
