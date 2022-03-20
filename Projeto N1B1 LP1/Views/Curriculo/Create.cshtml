@@ -53,7 +53,7 @@
                     <h3>Formações academicas</h3>
                 </div>
                 <div id="ConteudoInternoFormacaoAcademica" class="row ConteudoInterno">
-                    <div id="Formacao1" class="row innerContent">
+                    <div id="Formacao" class="row innerContent">
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <input class="btn btn-danger" type="button" value="Excluir" />    <br />
                         </div>
@@ -100,9 +100,9 @@
                     <h3>Experiências profissionais</h3>
                 </div>
                 <div id="ConteudoInternoExperienciasProfissionais" class="row ConteudoInterno">
-                    <div id="ExperienciaProfissional1" class="row innerContent">
+                    <div id="ExperienciaProfissional" class="row innerContent">
                         <div class="col-sm-12 col-md-12 col-lg-12">
-                            <input class="btn btn-danger" type="button" value="Excluir" />    <br />
+                            <input onclick="javascript:excluiExperienciaProfissional(0)" class="btn btn-danger" type="button" value="Excluir" />    <br />
                         </div>
 
                         <div class="col-sm-12 col-md-12 col-lg-12 my-1">
@@ -124,11 +124,59 @@
                             </div>
                         </div>
                     </div>
+                    <div id="ExperienciaProfissional" class="row innerContent" hidden>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <input onclick="javascript:excluiExperienciaProfissional(1)" class="btn btn-danger" type="button" value="Excluir" />    <br />
+                        </div>
+
+                        <div class="col-sm-12 col-md-12 col-lg-12 my-1">
+                            <div class="card-body">
+                                Função  <br />
+                                <input class="form-control" type="text" name="CargoOcupadoExp2" />
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6 my-1">
+                            <div class="card-body">
+                                Data início <br />
+                                <input class="form-control" type="date" name="DataInicioExp2" />
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6 my-1">
+                            <div class="card-body">
+                                Data término <br />
+                                <input class="form-control" type="date" name="DataTerminoExp2" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ExperienciaProfissional" class="row innerContent" hidden>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <input onclick="javascript:excluiExperienciaProfissional(2)" class="btn btn-danger" type="button" value="Excluir" />    <br />
+                        </div>
+
+                        <div class="col-sm-12 col-md-12 col-lg-12 my-1">
+                            <div class="card-body">
+                                Função  <br />
+                                <input class="form-control" type="text" name="CargoOcupadoExp3" />
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6 my-1">
+                            <div class="card-body">
+                                Data início <br />
+                                <input class="form-control" type="date" name="DataInicioExp3" />
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6 my-1">
+                            <div class="card-body">
+                                Data término <br />
+                                <input class="form-control" type="date" name="DataTerminoExp3" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <br />
                 <br />
                 <div class="col-md-12">
-                    <input class="btn btn-success" type="submit" value="Adicionar mais" />    <br />
+                    <input id="btnAdicionaExpProf" onclick="javascript:adicionaExperienciaProfissional()" class="btn btn-success" type="button" value="Adicionar mais" />    <br />
                 </div>
             </div>
         </div>
@@ -399,6 +447,6 @@
     <br />
     <div class="formataDiv">
         <input class="btn btn-success btnRodape" type="submit" contextmenu="Enviar" />
-        <input class="btn btn-success btnRodape" type="submit" value="Voltar" />
+        <input onclick="javascript:window.back()" class="btn btn-success btnRodape" type="submit" value="Voltar" />
     </div>
 </form>

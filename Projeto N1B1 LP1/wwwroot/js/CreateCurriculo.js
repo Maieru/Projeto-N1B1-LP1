@@ -33,3 +33,34 @@ function excluiIdioma(numeroDoIdioma) {
     if ($("#btnAdicionaIdioma").is(":hidden"))
         $("#btnAdicionaIdioma").removeAttr("hidden")
 }
+
+function adicionaExperienciaProfissional() {
+    var divsDeExperienciaProfissional = $("[id = ExperienciaProfissional]");
+    var numeroDeExpProfissionaisDisponiveis = numeroDeExpProfissionais;
+
+    for (var i = 0; i < divsDeExperienciaProfissional.length; i++) {
+        if ($(divsDeExperienciaProfissional[i]).is(":hidden")) {
+            divsDeExperienciaProfissional[i].removeAttribute("hidden")
+            numeroDeExpProfissionaisDisponiveis--;
+            break;
+        }
+        else
+            numeroDeExpProfissionaisDisponiveis--;
+    }
+
+    if (numeroDeExpProfissionaisDisponiveis == 0)
+        $("#btnAdicionaExpProf").attr("hidden", true);
+}
+
+function excluiExperienciaProfissional(numeroDaExpProfissional) {
+    var divSelecionada = $("#ConteudoInternoExperienciasProfissionais").children()[numeroDaExpProfissional];
+    $(divSelecionada).attr("hidden", true);
+
+    // Retorna os campos para um valor vazio
+    $(`[name = CargoOcupadoExp${numeroDaExpProfissional + 1}`).val("");
+    $(`[name = DataInicioExp${numeroDaExpProfissional + 1}`).val("");
+    $(`[name = DataTerminoExp${numeroDaExpProfissional + 1}`).val("");
+
+    if ($("#btnAdicionaExpProf").is(":hidden"))
+        $("#btnAdicionaExpProf").removeAttr("hidden")
+}
