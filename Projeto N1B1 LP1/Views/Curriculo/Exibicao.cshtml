@@ -1,0 +1,51 @@
+﻿@model CurriculoViewModel;
+<div class="container" style="font-family: Cambria">
+    <header>
+        <button class="btn btn-primary" type="button" style="margin-left: 1%;height: 40px;">
+            Voltar
+        </button>
+        <h1 style="text-align: center;"><b>@Model.Nome</b></h1>
+    </header>
+    <hr style="border-width: 5px;border-color: black;">
+    <h4><i>|@Model.Telefone | @Model.Email | @Model.Endereco |</i></h4>
+    <br><br>
+    <h2 style="text-align: center;background-color: #DEDEDE;"><b>Objetivo</b></h2><br />
+    <h4><i>Pretensão Salarial de R$@Model.PretensaoSalarial e Cargo Pretendido: @Model.CargoPretendido</i></h4>
+    <br>
+    <h3 style="text-align: center;background-color: #DEDEDE;"><b>Formação</b></h3><br />
+
+    <h4>
+        <ul>
+            <li>@Model.TipoFormacao1 | @Model.DataInicioFormacao1-@Model.DataTerminoFormacao1</li>
+            <li>@Model.TipoFormacao2 | @Model.DataInicioFormacao2-@Model.DataTerminoFormacao2</li>
+            <li>@Model.TipoFormacao3 | @Model.DataInicioFormacao3-@Model.DataTerminoFormacao3</li>
+            <li>@Model.TipoFormacao4 | @Model.DataInicioFormacao4-@Model.DataTerminoFormacao4</li>
+            <li>@Model.TipoFormacao5 | @Model.DataInicioFormacao5-@Model.DataTerminoFormacao5</li>
+
+        </ul>
+    </h4>
+    <br>
+    <h3 style="text-align: center;background-color: #DEDEDE;"><b>Experiência Profissional</b></h3><br />
+
+    <h4>
+        <ul>
+            <li>@Model.CargoOcupadoExp1 | @Model.DataInicioExp1-@Model.DataTerminoExp1</li>
+            <li>@Model.CargoOcupadoExp2 | @Model.DataInicioExp2-@Model.DataTerminoExp2</li>
+            <li>@Model.CargoOcupadoExp3 | @Model.DataInicioExp3-@Model.DataTerminoExp3</li>
+
+        </ul>
+    </h4>
+    <br>
+    <h3 style="text-align: center;background-color: #DEDEDE;">
+        <b>Idiomas</b>
+    </h3><br />
+    <h4>
+        <ul>
+            <li>@Model.Idioma1 @Model.FalarIdioma1 para fala, @Model.LeituraIdioma1 para leitura e @Model.EscutarIdioma1 para escutar</li>
+            <li>@Model.Idioma2 @Model.FalarIdioma2 para fala, @Model.LeituraIdioma2 para leitura e @Model.EscutarIdioma2 para escutar</li>
+            <li>@Model.Idioma3 @Model.FalarIdioma3 para fala, @Model.LeituraIdioma3 para leitura e @Model.EscutarIdioma3 para escutar</li>
+            <li>@Model.Idioma4 @Model.FalarIdioma4 para fala, @Model.LeituraIdioma4 para leitura e @Model.EscutarIdioma4 para escutar</li>
+            <li>@Model.Idioma5 @Model.FalarIdioma5 para fala, @Model.LeituraIdioma5 para leitura e @Model.EscutarIdioma5 para escutar</li>
+        </ul>
+    </h4>
+</div>
