@@ -1,4 +1,5 @@
 ﻿<link href="~/css/CreateCurriculo.css" rel="stylesheet" />
+<script src="~/js/CreateCurriculo.js"></script>
 
 <div class="formataDiv">
     <br/>
@@ -51,7 +52,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-12">
                     <h3>Formações academicas</h3>
                 </div>
-                <div id="ConteudoInterno" class="row ConteudoInterno">
+                <div id="ConteudoInternoFormacaoAcademica" class="row ConteudoInterno">
                     <div id="Formacao1" class="row innerContent">
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <input class="btn btn-danger" type="button" value="Excluir" />    <br />
@@ -98,7 +99,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-12">
                     <h3>Experiências profissionais</h3>
                 </div>
-                <div id="ConteudoInterno" class="row ConteudoInterno">
+                <div id="ConteudoInternoExperienciasProfissionais" class="row ConteudoInterno">
                     <div id="ExperienciaProfissional1" class="row innerContent">
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <input class="btn btn-danger" type="button" value="Excluir" />    <br />
@@ -141,15 +142,16 @@
                 <div class="col-sm-12 col-md-12 col-lg-12">
                     <h3>Dados de idioma</h3>
                 </div>
-                <div id="ConteudoInterno" class="row ConteudoInterno">
-                    <div id="ExperienciaProfissional1" class="row innerContent">
+                <div id="ConteudoInternoIdiomas" class="row ConteudoInterno">
+                    <div id="Idioma" class="row innerContent">
                         <div class="col-sm-12 col-md-12 col-lg-12">
-                            <input class="btn btn-danger" type="button" value="Excluir" />    <br />
+                            <input onclick="javascript:excluiIdioma(0)" class="btn btn-danger" type="button" value="Excluir" />    <br />
                         </div>
                         <div class="col-lg-6">
                             <div class="card-body">
                                 Idioma <br />
                                 <select class="form-control" name="Idioma1">
+                                    <option value="0">Selecione...</option>
                                     <option value="1">Portugues</option>
                                     <option value="2">Ingles</option>
                                     <option value="3">Espanhol</option>
@@ -161,10 +163,11 @@
                                 </select> <br />
                                 Leitura<br />
                                 <select class="form-control" name="LeituraIdioma1">
-                                    <option value="0">Básico</option>
-                                    <option value="1">Intermediário</option>
-                                    <option value="2">Avançado</option>
-                                    <option value="3">Fluente</option>
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                    <option value="4">Fluente</option>
                                 </select>
                             </div>
                         </div>
@@ -172,24 +175,222 @@
                             <div class="card-body">
                                 Escuta <br />
                                 <select class="form-control" name="EscutarIdioma1">
-                                    <option value="0">Básico</option>
-                                    <option value="1">Intermediário</option>
-                                    <option value="2">Avançado</option>
-                                    <option value="3">Fluente</option>
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                    <option value="4">Fluente</option>
                                 </select>     <br />
                                 Fala    <br />
                                 <select class="form-control" name="FalarIdioma1">
-                                    <option value="0">Básico</option>
-                                    <option value="1">Intermediário</option>
-                                    <option value="2">Avançado</option>
-                                    <option value="3">Fluente</option>
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                    <option value="4">Fluente</option>
+                                </select>     <br />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Idioma" class="row innerContent" hidden>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <input onclick="javascript:excluiIdioma(1)" class="btn btn-danger" type="button" value="Excluir" />    <br />
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card-body">
+                                Idioma <br />
+                                <select class="form-control" name="Idioma2">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Portugues</option>
+                                    <option value="2">Ingles</option>
+                                    <option value="3">Espanhol</option>
+                                    <option value="4">Frances</option>
+                                    <option value="5">Alemao</option>
+                                    <option value="6">Mandarim</option>
+                                    <option value="7">Arabe</option>
+                                    <option value="8">Japones</option>
+                                </select> <br />
+                                Leitura<br />
+                                <select class="form-control" name="LeituraIdioma2">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                    <option value="4">Fluente</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card-body">
+                                Escuta <br />
+                                <select class="form-control" name="EscutarIdioma2">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                    <option value="4">Fluente</option>
+                                </select>     <br />
+                                Fala    <br />
+                                <select class="form-control" name="FalarIdioma2">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                    <option value="4">Fluente</option>
+                                </select>     <br />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Idioma" class="row innerContent" hidden>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <input onclick="javascript:excluiIdioma(2)" class="btn btn-danger" type="button" value="Excluir" />    <br />
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card-body">
+                                Idioma <br />
+                                <select class="form-control" name="Idioma3">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Portugues</option>
+                                    <option value="2">Ingles</option>
+                                    <option value="3">Espanhol</option>
+                                    <option value="4">Frances</option>
+                                    <option value="5">Alemao</option>
+                                    <option value="6">Mandarim</option>
+                                    <option value="7">Arabe</option>
+                                    <option value="8">Japones</option>
+                                </select> <br />
+                                Leitura<br />
+                                <select class="form-control" name="LeituraIdioma3">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                    <option value="4">Fluente</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card-body">
+                                Escuta <br />
+                                <select class="form-control" name="EscutarIdioma3">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                    <option value="4">Fluente</option>
+                                </select>     <br />
+                                Fala    <br />
+                                <select class="form-control" name="FalarIdioma3">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                    <option value="4">Fluente</option>
+                                </select>     <br />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Idioma" class="row innerContent" hidden>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <input onclick="javascript:excluiIdioma(3)" class="btn btn-danger" type="button" value="Excluir" />    <br />
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card-body">
+                                Idioma <br />
+                                <select class="form-control" name="Idioma4">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Portugues</option>
+                                    <option value="2">Ingles</option>
+                                    <option value="3">Espanhol</option>
+                                    <option value="4">Frances</option>
+                                    <option value="5">Alemao</option>
+                                    <option value="6">Mandarim</option>
+                                    <option value="7">Arabe</option>
+                                    <option value="8">Japones</option>
+                                </select> <br />
+                                Leitura<br />
+                                <select class="form-control" name="LeituraIdioma4">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                    <option value="4">Fluente</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card-body">
+                                Escuta <br />
+                                <select class="form-control" name="EscutarIdioma4">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                    <option value="4">Fluente</option>
+                                </select>     <br />
+                                Fala    <br />
+                                <select class="form-control" name="FalarIdioma4">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                    <option value="4">Fluente</option>
+                                </select>     <br />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Idioma" class="row innerContent" hidden>
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <input onclick="javascript:excluiIdioma(4)" class="btn btn-danger" type="button" value="Excluir" />    <br />
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card-body">
+                                Idioma <br />
+                                <select class="form-control" name="Idioma5">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Portugues</option>
+                                    <option value="2">Ingles</option>
+                                    <option value="3">Espanhol</option>
+                                    <option value="4">Frances</option>
+                                    <option value="5">Alemao</option>
+                                    <option value="6">Mandarim</option>
+                                    <option value="7">Arabe</option>
+                                    <option value="8">Japones</option>
+                                </select> <br />
+                                Leitura<br />
+                                <select class="form-control" name="LeituraIdioma5">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                    <option value="4">Fluente</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card-body">
+                                Escuta <br />
+                                <select class="form-control" name="EscutarIdioma5">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                    <option value="4">Fluente</option>
+                                </select>     <br />
+                                Fala    <br />
+                                <select class="form-control" name="FalarIdioma5">
+                                    <option value="0">Selecione...</option>
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediário</option>
+                                    <option value="3">Avançado</option>
+                                    <option value="4">Fluente</option>
                                 </select>     <br />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <input class="btn btn-success" type="submit" value="Adicionar mais" />    <br />
+                    <input id="btnAdicionaIdioma" class="btn btn-success" type="button" value="Adicionar mais" onclick="javascript:adicionaIdioma()"/>    <br />
                 </div>
             </div>
         </div>
