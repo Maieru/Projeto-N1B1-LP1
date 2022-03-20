@@ -64,3 +64,35 @@ function excluiExperienciaProfissional(numeroDaExpProfissional) {
     if ($("#btnAdicionaExpProf").is(":hidden"))
         $("#btnAdicionaExpProf").removeAttr("hidden")
 }
+
+function adicionaFormacaoAcademica() {
+    var divsDeFormacao = $("[id = Formacao]");
+    var numeroDeFormacoesDisponiveis = numeroDeFormacoes;
+
+    for (var i = 0; i < divsDeFormacao.length; i++) {
+        if ($(divsDeFormacao[i]).is(":hidden")) {
+            divsDeFormacao[i].removeAttribute("hidden")
+            numeroDeFormacoesDisponiveis--;
+            break;
+        }
+        else
+            numeroDeFormacoesDisponiveis--;
+    }
+
+    if (numeroDeFormacoesDisponiveis == 0)
+        $("#btnAdicionaFormacao").attr("hidden", true);
+}
+
+function excluiFormacaoAcademica(numeroDaFormacao) {
+    var divSelecionada = $("#ConteudoInternoFormacaoAcademica").children()[numeroDaFormacao];
+    $(divSelecionada).attr("hidden", true);
+
+    // Retorna os campos para um valor vazio
+    $(`[name = TipoFormacao${numeroDaFormacao + 1}`).val("0");
+    $(`[name = TituloFormacao${numeroDaFormacao + 1}`).val("");
+    $(`[name = DataInicioFormacao${numeroDaFormacao + 1}`).val("");
+    $(`[name = DataTerminoFormacao${numeroDaFormacao + 1}`).val("");
+
+    if ($("#btnAdicionaFormacao").is(":hidden"))
+        $("#btnAdicionaFormacao").removeAttr("hidden")
+}

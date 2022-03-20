@@ -92,5 +92,10 @@ namespace Projeto_N1B1_LP1.Services
 
             return (T)valor;
         }
+
+        public static void OrganizaValores()
+        {
+
+        }
     }
 }
