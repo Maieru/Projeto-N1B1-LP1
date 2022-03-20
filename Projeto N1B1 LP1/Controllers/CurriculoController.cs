@@ -35,5 +35,12 @@ namespace Projeto_N1B1_LP1.Controllers
                 return View("Error", erro);
             }
         }
+
+        public IActionResult Visualizar(int id)
+        {
+            var curriculoDAO = new CurriculoDAO();
+            var model = curriculoDAO.Select(id);
+            return View("Exibicao", model);
+        }
     }
 }
