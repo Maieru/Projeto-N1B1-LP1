@@ -12,7 +12,7 @@ namespace Projeto_N1B1_LP1.DAO
     {
         public static SqlConnection GetDbConnection()
         {
-            string connectionString = "data source=LOCALHOST; database=TrabalhoLP1N1B1; user id=sa; password=123456";
+            string connectionString = "server = .\\SQLexpress; database=TrabalhoLP1N1B1; integrated security = true";
 
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
