@@ -1,6 +1,10 @@
 ﻿IF NOT EXISTS (SELECT * FROM sys.databases d WHERE d.name = 'TrabalhoLP1N1B1')
 	CREATE DATABASE TrabalhoLP1N1B1 
 
+GO
+USE TrabalhoLP1N1B1
+GO
+
 IF NOT EXISTS (SELECT * FROM sys.tables t WHERE t.name = 'tbCurriculo')
 BEGIN
 	CREATE TABLE [tbCurriculo]
