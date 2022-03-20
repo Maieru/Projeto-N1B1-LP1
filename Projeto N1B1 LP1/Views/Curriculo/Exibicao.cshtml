@@ -8,88 +8,167 @@
         <h1 style="text-align: center;"><b>@Model.Nome</b></h1>
     </header>
     <hr style="border-width: 5px;border-color: black;">
-    <h4><i>|@Model.Telefone | @Model.Email | @Model.Endereco |</i></h4>
-    <br><br>
+    <h4>
+        <i>
+
+            Telefone: @Model.Telefone <br />
+            Email: @Model.Email <br />
+            Endereço: @Model.Endereco
+        </i>
+    </h4>
+    <br>
     <h2 style="text-align: center;background-color: #DEDEDE;"><b>Objetivo</b></h2><br />
-    <h4><i>Pretensão Salarial de R$@Model.PretensaoSalarial e Cargo Pretendido: @Model.CargoPretendido</i></h4>
+    <h4>
+        <i>
+            Pretensão Salarial de R$@Model.PretensaoSalarial <br />
+            Cargo Pretendido: @Model.CargoPretendido
+        </i>
+    </h4>
     <br>
     <h3 style="text-align: center;background-color: #DEDEDE;"><b>Formação</b></h3><br />
 
     <h4>
         <ul>
-            <li>@Model.TipoFormacao1 | @Model.DataInicioFormacao1-@Model.DataTerminoFormacao1</li>
+            <li>
+                @Model.TipoFormacao1 - Curso: @Model.TituloFormacao1 <br />
+                Data Inicio: @Model.DataInicioFormacao1.ToShortDateString() | Data Término: @Model.DataTerminoFormacao1.ToShortDateString()
+            </li>
 
             @if (Model.TipoFormacao2 != EnumTipoFormacao.None)
             {
-                <li>@Model.TipoFormacao2 | @Model.DataInicioFormacao2-@Model.DataTerminoFormacao2</li>
+                <li>
+                    @Model.TipoFormacao2 - Curso: @Model.TituloFormacao2 <br />
+                    Data Inicio: @Model.DataInicioFormacao2?.ToShortDateString() | Data Término: @Model.DataTerminoFormacao2?.ToShortDateString()
+                </li>
             }
 
             @if (Model.TipoFormacao3 != EnumTipoFormacao.None)
             {
-                <li>@Model.TipoFormacao3 | @Model.DataInicioFormacao3-@Model.DataTerminoFormacao3</li>
+                <li>
+                    @Model.TipoFormacao3 - Curso: @Model.TituloFormacao3 <br />
+                    Data Inicio: @Model.DataInicioFormacao3?.ToShortDateString() | Data Término: @Model.DataTerminoFormacao3?.ToShortDateString()
+                </li>
             }
 
             @if (Model.TipoFormacao4 != EnumTipoFormacao.None)
             {
-                <li>@Model.TipoFormacao4 | @Model.DataInicioFormacao4-@Model.DataTerminoFormacao4</li>
+                <li>
+                    @Model.TipoFormacao4 - Curso: @Model.TituloFormacao4 <br />
+                    Data Inicio: @Model.DataInicioFormacao4?.ToShortDateString() | Data Término: @Model.DataTerminoFormacao4?.ToShortDateString()
+                </li>
             }
 
             @if (Model.TipoFormacao5 != EnumTipoFormacao.None)
             {
-                <li>@Model.TipoFormacao5 | @Model.DataInicioFormacao5-@Model.DataTerminoFormacao5</li>
+                <li>
+                    @Model.TipoFormacao5 - Curso: @Model.TituloFormacao5 <br />
+                    Data Inicio: @Model.DataInicioFormacao5?.ToShortDateString() | Data Término: @Model.DataTerminoFormacao5?.ToShortDateString()
+                </li>
             }
         </ul>
     </h4>
     <br>
-    <h3 style="text-align: center;background-color: #DEDEDE;"><b>Experiência Profissional</b></h3><br />
+    @if (Model.CargoOcupadoExp1 != null ||
+    Model.CargoOcupadoExp2 != null ||
+    Model.CargoOcupadoExp3 != null)
+    {
+        <h3 style="text-align: center;background-color: #DEDEDE;"><b>Experiência Profissional</b></h3>
+        <br />
+        <h4>
+            <ul>
+                @if (Model.CargoOcupadoExp1 != null)
+                {
+                    <li>
+                        Cargo: @Model.CargoOcupadoExp1 <br />
+                        Data Inicio: @Model.DataInicioExp1 | Data de Término: @Model.DataTerminoExp1
+                    </li>
+                }
 
-    <h4>
-        <ul>
-            @if (Model.CargoOcupadoExp1 != null)
-            {
-                <li>@Model.CargoOcupadoExp1 | @Model.DataInicioExp1-@Model.DataTerminoExp1</li>
-            }
+                @if (Model.CargoOcupadoExp2 != null)
+                {
+                    <li>
+                        Cargo: @Model.CargoOcupadoExp2 <br />
+                        Data Inicio: @Model.DataInicioExp2 | Data de Término: @Model.DataTerminoExp2
+                    </li>
+                }
 
-            @if (Model.CargoOcupadoExp2 != null)
-            {
-                <li>@Model.CargoOcupadoExp2 | @Model.DataInicioExp2-@Model.DataTerminoExp2</li>
-            }
+                @if (Model.CargoOcupadoExp3 != null)
+                {
+                    <li>
+                        Cargo: @Model.CargoOcupadoExp3 <br />
+                        Data Inicio: @Model.DataInicioExp3 | Data de Término: @Model.DataTerminoExp3
+                    </li>
+                }
+            </ul>
+        </h4>
+        <br>
+    }
+    @if (Model.Idioma1 != EnumIdiomas.None ||
+         Model.Idioma2 != EnumIdiomas.None ||
+         Model.Idioma3 != EnumIdiomas.None ||
+         Model.Idioma4 != EnumIdiomas.None ||
+         Model.Idioma5 != EnumIdiomas.None)
+    {
+        <h3 style="text-align: center;background-color: #DEDEDE;">
+            <b>Idiomas</b>
+        </h3>
 
-            @if (Model.CargoOcupadoExp3 != null)
-            {
-                <li>@Model.CargoOcupadoExp3 | @Model.DataInicioExp3-@Model.DataTerminoExp3</li>
-            }
-        </ul>
-    </h4>
-    <br>
-    <h3 style="text-align: center;background-color: #DEDEDE;">
-        <b>Idiomas</b>
-    </h3><br />
-    <h4>
-        <ul>
-            @if (Model.Idioma1 != EnumIdiomas.None)
-            {
-                <li>@Model.Idioma1 @Model.FalarIdioma1 para fala, @Model.LeituraIdioma1 para leitura e @Model.EscutarIdioma1 para escutar</li>
-            }
+        <br />
+        <h4>
+            <ul>
+                @if (Model.Idioma1 != EnumIdiomas.None)
+                {
+                    <li>
+                        @Model.Idioma1 <br />
+                        &nbsp Fala: @Model.FalarIdioma1 <br />
+                        &nbsp Leitura: @Model.LeituraIdioma1 <br />
+                        &nbsp Escutar: @Model.EscutarIdioma1
+                    </li>
+                    <br />
+                }
 
-            @if (Model.Idioma2 != EnumIdiomas.None)
-            {
-                <li>@Model.Idioma2 @Model.FalarIdioma2 para fala, @Model.LeituraIdioma2 para leitura e @Model.EscutarIdioma2 para escutar</li>
-            }
+                @if (Model.Idioma2 != EnumIdiomas.None)
+                {
+                    <li>
+                        @Model.Idioma2 <br />
+                        &nbsp Fala: @Model.FalarIdioma2 <br />
+                        &nbsp Leitura: @Model.LeituraIdioma2 <br />
+                        &nbsp Escutar: @Model.EscutarIdioma2
+                    </li>
+                    <br />
+                }
 
-            @if (Model.Idioma3 != EnumIdiomas.None)
-            {
-                <li>@Model.Idioma3 @Model.FalarIdioma3 para fala, @Model.LeituraIdioma3 para leitura e @Model.EscutarIdioma3 para escutar</li>
-            }
+                @if (Model.Idioma3 != EnumIdiomas.None)
+                {
+                    <li>
+                        @Model.Idioma3 <br />
+                        &nbsp Fala: @Model.FalarIdioma3 <br />
+                        &nbsp Leitura: @Model.LeituraIdioma3 <br />
+                        &nbsp Escutar: @Model.EscutarIdioma3
+                    </li>
+                    <br />
+                }
 
-            @if (Model.Idioma4 != EnumIdiomas.None)
-            {
-                <li>@Model.Idioma4 @Model.FalarIdioma4 para fala, @Model.LeituraIdioma4 para leitura e @Model.EscutarIdioma4 para escutar</li>
-            }
+                @if (Model.Idioma4 != EnumIdiomas.None)
+                {
+                    <li>
+                        @Model.Idioma4 <br />
+                        &nbsp Fala: @Model.FalarIdioma4 <br />
+                        &nbsp Leitura: @Model.LeituraIdioma4 <br />
+                        &nbsp Escutar: @Model.EscutarIdioma4
+                    </li>
+                    <br />
+                }
 
-            @if (Model.Idioma5 != EnumIdiomas.None)
-            {
-                <li>@Model.Idioma5 @Model.FalarIdioma5 para fala, @Model.LeituraIdioma5 para leitura e @Model.EscutarIdioma5 para escutar</li>
-            }
-    </h4>
+                @if (Model.Idioma5 != EnumIdiomas.None)
+                {
+                    <li>
+                        @Model.Idioma5 <br />
+                        &nbsp Fala: @Model.FalarIdioma5 <br />
+                        &nbsp Leitura: @Model.LeituraIdioma5 <br />
+                        &nbsp Escutar: @Model.EscutarIdioma5
+                    </li>
+                }
+        </h4>
+    }
 </div>
