@@ -41,6 +41,21 @@ namespace Projeto_N1B1_LP1.Controllers
         {
             return View("Create");
         }
+        public IActionResult Edit(int id)
+        {
+            try
+            {
+                var curriculoDAO = new CurriculoDAO();
+                var model = curriculoDAO.Select(id);
+
+                return View("Edit", model);
+            }
+            catch (Exception erro)
+            {
+                return View("Error", erro);
+            }
+
+        }
 
         public IActionResult Post(CurriculoViewModel curriculoViewModel, bool edicao)
         {

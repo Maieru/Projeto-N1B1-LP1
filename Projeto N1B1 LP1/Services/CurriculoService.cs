@@ -2,6 +2,9 @@
 using Projeto_N1B1_LP1.Models;
 using System;
 using System.Data;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Projeto_N1B1_LP1.Services
 {
@@ -93,9 +96,5 @@ namespace Projeto_N1B1_LP1.Services
             return (T)valor;
         }
 
-        public static void OrganizaValores()
-        {
-
-        }
     }
 }

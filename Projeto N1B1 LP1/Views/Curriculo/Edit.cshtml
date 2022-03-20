@@ -1,14 +1,18 @@
-﻿<link href="~/css/CreateCurriculo.css" rel="stylesheet" />
+﻿@using Projeto_N1B1_LP1.Enums
+@model CurriculoViewModel
+
+<link href="~/css/CreateCurriculo.css" rel="stylesheet" />
 <script src="~/js/CreateCurriculo.js"></script>
 
 <div class="formataDiv">
-    <br/>
-    <h1 class="tituloPagina">Criação de novos currículos </h1>
-    <br/>
+    <br />
+    <h1 class="tituloPagina">Edição de Curriculo</h1>
+    <br />
 </div>
 <br />
 <form asp-action="Post">
-    <input type="text" name="edicao" value="false" hidden />
+    <input type="text" name="edicao" value="true" hidden />
+    <input type="text" asp-for="Id" hidden />
     <section>
         <div class="container">
             <div class="row grid-divider formataDiv">
@@ -18,26 +22,26 @@
                 <div class="col-sm-12 col-md-6 col-lg-4 my-1">
                     <div class="card-body">
                         Nome <br />
-                        <input class="form-control" type="text" name="Nome" /><br />
+                        <input class="form-control" type="text" asp-for="Nome" /><br />
                         CPF <br />
-                        <input class="form-control" type="text" name="CPF" /><br />
+                        <input class="form-control" type="text" asp-for="CPF" /><br />
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-4 my-1">
                     <div class="card-body">
                         Endereço <br />
-                        <input class="form-control" type="text" name="Endereco" /> <br />
+                        <input class="form-control" type="text" asp-for="Endereco" /> <br />
                         Telefone <br />
-                        <input class="form-control" type="text" name="Telefone" /> <br />
+                        <input class="form-control" type="text" asp-for="Telefone" /> <br />
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-4 my-1">
                     <div>
                         <div class="card-body">
                             E-mail <br />
-                            <input class="form-control" type="text" name="Email" /> <br />
+                            <input class="form-control" type="text" asp-for="Email" /> <br />
                             Pretensão salarial <br />
-                            <input class="form-control" type="text" name="PretensaoSalarial" /> <br />
+                            <input class="form-control" type="text" asp-for="PretensaoSalarial" /> <br />
                         </div>
                     </div>
                 </div>
@@ -45,7 +49,8 @@
                     <div>
                         <div class="card-body">
                             Cargo Pretendido <br />
-                            <input class="form-control" type="text" name="CargoPretendido" /> <br /></div>
+                            <input class="form-control" type="text" asp-for="CargoPretendido" /> <br />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -59,11 +64,11 @@
                     <h3>Formações academicas</h3>
                 </div>
                 <div id="ConteudoInternoFormacaoAcademica" class="row ConteudoInterno">
-                    <div id="Formacao" class="row innerContent">
+                    <div id="Formacao" class="row innerContent" @(Model.TipoFormacao1 == EnumTipoFormacao.None ? "hidden" : "")>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Tipo Formação <br />
-                                <select class="form-control" name="TipoFormacao1">
+                                <select class="form-control" asp-for="TipoFormacao1">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Fundamental</option>
                                     <option value="2">Medio</option>
@@ -75,26 +80,26 @@
                                     <option value="8">Doutorado</option>
                                 </select> <br />
                                 Nome da Formação <br />
-                                <input class="form-control" type="text" name="TituloFormacao1" /> <br />
+                                <input class="form-control" type="text" asp-for="TituloFormacao1" /> <br />
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Data de início <br />
-                                <input class="form-control" type="date" name="DataInicioFormacao1" /> <br />
+                                <input class="form-control" type="date" asp-for="DataInicioFormacao1" /> <br />
                                 Data de Término <br />
-                                <input class="form-control" type="date" name="DataTerminoFormacao1" /> <br />
+                                <input class="form-control" type="date" asp-for="DataTerminoFormacao1" /> <br />
                             </div>
                         </div>
                     </div>
-                    <div id="Formacao" class="row innerContent" hidden>
+                    <div id="Formacao" class="row innerContent" @(Model.TipoFormacao2 == EnumTipoFormacao.None ? "hidden" : "")>
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <input onclick="javascript:excluiFormacaoAcademica(1)" class="btn btn-danger" type="button" value="Excluir" />    <br />
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Tipo Formação <br />
-                                <select class="form-control" name="TipoFormacao2">
+                                <select class="form-control" asp-for="TipoFormacao2">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Fundamental</option>
                                     <option value="2">Medio</option>
@@ -106,26 +111,26 @@
                                     <option value="8">Doutorado</option>
                                 </select> <br />
                                 Nome da Formação <br />
-                                <input class="form-control" type="text" name="TituloFormacao2" /> <br />
+                                <input class="form-control" type="text" asp-for="TituloFormacao2" /> <br />
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Data de início <br />
-                                <input class="form-control" type="date" name="DataInicioFormacao2" /> <br />
+                                <input class="form-control" type="date" asp-for="DataInicioFormacao2" /> <br />
                                 Data de Término <br />
-                                <input class="form-control" type="date" name="DataTerminoFormacao2" /> <br />
+                                <input class="form-control" type="date" asp-for="DataTerminoFormacao2" /> <br />
                             </div>
                         </div>
                     </div>
-                    <div id="Formacao" class="row innerContent" hidden>
+                    <div id="Formacao" class="row innerContent" @(Model.TipoFormacao3 == EnumTipoFormacao.None ? "hidden" : "")>
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <input onclick="javascript:excluiFormacaoAcademica(2)" class="btn btn-danger" type="button" value="Excluir" />    <br />
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Tipo Formação <br />
-                                <select class="form-control" name="TipoFormacao3" >
+                                <select class="form-control" asp-for="TipoFormacao3">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Fundamental</option>
                                     <option value="2">Medio</option>
@@ -137,26 +142,26 @@
                                     <option value="8">Doutorado</option>
                                 </select> <br />
                                 Nome da Formação <br />
-                                <input class="form-control" type="text" name="TituloFormacao3" /> <br />
+                                <input class="form-control" type="text" asp-for="TituloFormacao3" /> <br />
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Data de início <br />
-                                <input class="form-control" type="date" name="DataInicioFormacao3" /> <br />
+                                <input class="form-control" type="date" asp-for="DataInicioFormacao3" /> <br />
                                 Data de Término <br />
-                                <input class="form-control" type="date" name="DataTerminoFormacao3" /> <br />
+                                <input class="form-control" type="date" asp-for="DataTerminoFormacao3" /> <br />
                             </div>
                         </div>
                     </div>
-                    <div id="Formacao" class="row innerContent" hidden>
+                    <div id="Formacao" class="row innerContent" @(Model.TipoFormacao4 == EnumTipoFormacao.None ? "hidden" : "")>
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <input onclick="javascript:excluiFormacaoAcademica(3)" class="btn btn-danger" type="button" value="Excluir" />    <br />
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Tipo Formação <br />
-                                <select class="form-control" name="TipoFormacao" >
+                                <select class="form-control" asp-for="TipoFormacao4">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Fundamental</option>
                                     <option value="2">Medio</option>
@@ -168,26 +173,26 @@
                                     <option value="8">Doutorado</option>
                                 </select> <br />
                                 Nome da Formação <br />
-                                <input class="form-control" type="text" name="TituloFormacao4" /> <br />
+                                <input class="form-control" type="text" asp-for="TituloFormacao4" /> <br />
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Data de início <br />
-                                <input class="form-control" type="date" name="DataInicioFormacao4" /> <br />
+                                <input class="form-control" type="date" asp-for="DataInicioFormacao4" /> <br />
                                 Data de Término <br />
-                                <input class="form-control" type="date" name="DataTerminoFormacao4" /> <br />
+                                <input class="form-control" type="date" asp-for="DataTerminoFormacao4" /> <br />
                             </div>
                         </div>
                     </div>
-                    <div id="Formacao" class="row innerContent" hidden>
+                    <div id="Formacao" class="row innerContent" @(Model.TipoFormacao5 == EnumTipoFormacao.None ? "hidden" : "")>
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <input onclick="javascript:excluiFormacaoAcademica(4)" class="btn btn-danger" type="button" value="Excluir" />    <br />
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Tipo Formação <br />
-                                <select class="form-control" name="TipoFormacao5">
+                                <select class="form-control" asp-for="TipoFormacao5">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Fundamental</option>
                                     <option value="2">Medio</option>
@@ -199,15 +204,15 @@
                                     <option value="8">Doutorado</option>
                                 </select> <br />
                                 Nome da Formação <br />
-                                <input class="form-control" type="text" name="TituloFormacao5" /> <br />
+                                <input class="form-control" type="text" asp-for="TituloFormacao5" /> <br />
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Data de início <br />
-                                <input class="form-control" type="date" name="DataInicioFormacao5" /> <br />
+                                <input class="form-control" type="date" asp-for="DataInicioFormacao5" /> <br />
                                 Data de Término <br />
-                                <input class="form-control" type="date" name="DataTerminoFormacao5" /> <br />
+                                <input class="form-control" type="date" asp-for="DataTerminoFormacao5" /> <br />
                             </div>
                         </div>
                     </div>
@@ -226,7 +231,7 @@
                     <h3>Experiências profissionais</h3>
                 </div>
                 <div id="ConteudoInternoExperienciasProfissionais" class="row ConteudoInterno">
-                    <div id="ExperienciaProfissional" class="row innerContent">
+                    <div id="ExperienciaProfissional" class="row innerContent" @(Model.CargoOcupadoExp1 == null ? "hidden" : "")>
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <input onclick="javascript:excluiExperienciaProfissional(0)" class="btn btn-danger" type="button" value="Excluir" />    <br />
                         </div>
@@ -234,23 +239,23 @@
                         <div class="col-sm-12 col-md-12 col-lg-12 my-1">
                             <div class="card-body">
                                 Função  <br />
-                                <input class="form-control" type="text" name="CargoOcupadoExp1" />
+                                <input class="form-control" type="text" asp-for="CargoOcupadoExp1" />
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Data início <br />
-                                <input class="form-control" type="date" name="DataInicioExp1" />
+                                <input class="form-control" type="date" asp-for="DataInicioExp1" />
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Data término <br />
-                                <input class="form-control" type="date" name="DataTerminoExp1" />
+                                <input class="form-control" type="date" asp-for="DataTerminoExp1" />
                             </div>
                         </div>
                     </div>
-                    <div id="ExperienciaProfissional" class="row innerContent" hidden>
+                    <div id="ExperienciaProfissional" class="row innerContent" @(Model.CargoOcupadoExp2 == null ? "hidden" : "")>
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <input onclick="javascript:excluiExperienciaProfissional(1)" class="btn btn-danger" type="button" value="Excluir" />    <br />
                         </div>
@@ -258,23 +263,23 @@
                         <div class="col-sm-12 col-md-12 col-lg-12 my-1">
                             <div class="card-body">
                                 Função  <br />
-                                <input class="form-control" type="text" name="CargoOcupadoExp2" />
+                                <input class="form-control" type="text" asp-for="CargoOcupadoExp2" />
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Data início <br />
-                                <input class="form-control" type="date" name="DataInicioExp2" />
+                                <input class="form-control" type="date" asp-for="DataInicioExp2" />
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Data término <br />
-                                <input class="form-control" type="date" name="DataTerminoExp2" />
+                                <input class="form-control" type="date" asp-for="DataTerminoExp2" />
                             </div>
                         </div>
                     </div>
-                    <div id="ExperienciaProfissional" class="row innerContent" hidden>
+                    <div id="ExperienciaProfissional" class="row innerContent" @(Model.CargoOcupadoExp3 == null ? "hidden" : "")>
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <input onclick="javascript:excluiExperienciaProfissional(2)" class="btn btn-danger" type="button" value="Excluir" />    <br />
                         </div>
@@ -282,19 +287,19 @@
                         <div class="col-sm-12 col-md-12 col-lg-12 my-1">
                             <div class="card-body">
                                 Função  <br />
-                                <input class="form-control" type="text" name="CargoOcupadoExp3" />
+                                <input class="form-control" type="text" asp-for="CargoOcupadoExp3" />
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Data início <br />
-                                <input class="form-control" type="date" name="DataInicioExp3" />
+                                <input class="form-control" type="date" asp-for="DataInicioExp3" />
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 my-1">
                             <div class="card-body">
                                 Data término <br />
-                                <input class="form-control" type="date" name="DataTerminoExp3" />
+                                <input class="form-control" type="date" asp-for="DataTerminoExp3" />
                             </div>
                         </div>
                     </div>
@@ -315,14 +320,14 @@
                     <h3>Dados de idioma</h3>
                 </div>
                 <div id="ConteudoInternoIdiomas" class="row ConteudoInterno">
-                    <div id="Idioma" class="row innerContent">
+                    <div id="Idioma" class="row innerContent" @(Model.Idioma1 == EnumIdiomas.None ? "hidden" : "")>
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <input onclick="javascript:excluiIdioma(0)" class="btn btn-danger" type="button" value="Excluir" />    <br />
                         </div>
                         <div class="col-lg-6">
                             <div class="card-body">
                                 Idioma <br />
-                                <select class="form-control" name="Idioma1">
+                                <select class="form-control" asp-for="Idioma1">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Portugues</option>
                                     <option value="2">Ingles</option>
@@ -334,7 +339,7 @@
                                     <option value="8">Japones</option>
                                 </select> <br />
                                 Leitura<br />
-                                <select class="form-control" name="LeituraIdioma1">
+                                <select class="form-control" asp-for="LeituraIdioma1">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -346,7 +351,7 @@
                         <div class="col-lg-6">
                             <div class="card-body">
                                 Escuta <br />
-                                <select class="form-control" name="EscutarIdioma1">
+                                <select class="form-control" asp-for="EscutarIdioma1">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -354,7 +359,7 @@
                                     <option value="4">Fluente</option>
                                 </select>     <br />
                                 Fala    <br />
-                                <select class="form-control" name="FalarIdioma1">
+                                <select class="form-control" asp-for="FalarIdioma1">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -364,14 +369,14 @@
                             </div>
                         </div>
                     </div>
-                    <div id="Idioma" class="row innerContent" hidden>
+                    <div id="Idioma" class="row innerContent" @(Model.Idioma2 == EnumIdiomas.None ? "hidden" : "")>
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <input onclick="javascript:excluiIdioma(1)" class="btn btn-danger" type="button" value="Excluir" />    <br />
                         </div>
                         <div class="col-lg-6">
                             <div class="card-body">
                                 Idioma <br />
-                                <select class="form-control" name="Idioma2">
+                                <select class="form-control" asp-for="Idioma2">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Portugues</option>
                                     <option value="2">Ingles</option>
@@ -383,7 +388,7 @@
                                     <option value="8">Japones</option>
                                 </select> <br />
                                 Leitura<br />
-                                <select class="form-control" name="LeituraIdioma2">
+                                <select class="form-control" asp-for="LeituraIdioma2">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -395,7 +400,7 @@
                         <div class="col-lg-6">
                             <div class="card-body">
                                 Escuta <br />
-                                <select class="form-control" name="EscutarIdioma2">
+                                <select class="form-control" asp-for="EscutarIdioma2">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -403,7 +408,7 @@
                                     <option value="4">Fluente</option>
                                 </select>     <br />
                                 Fala    <br />
-                                <select class="form-control" name="FalarIdioma2">
+                                <select class="form-control" asp-for="FalarIdioma2">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -413,14 +418,14 @@
                             </div>
                         </div>
                     </div>
-                    <div id="Idioma" class="row innerContent" hidden>
+                    <div id="Idioma" class="row innerContent" @(Model.Idioma3 == EnumIdiomas.None ? "hidden" : "")>
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <input onclick="javascript:excluiIdioma(2)" class="btn btn-danger" type="button" value="Excluir" />    <br />
                         </div>
                         <div class="col-lg-6">
                             <div class="card-body">
                                 Idioma <br />
-                                <select class="form-control" name="Idioma3">
+                                <select class="form-control" asp-for="Idioma3">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Portugues</option>
                                     <option value="2">Ingles</option>
@@ -432,7 +437,7 @@
                                     <option value="8">Japones</option>
                                 </select> <br />
                                 Leitura<br />
-                                <select class="form-control" name="LeituraIdioma3">
+                                <select class="form-control" asp-for="LeituraIdioma3">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -444,7 +449,7 @@
                         <div class="col-lg-6">
                             <div class="card-body">
                                 Escuta <br />
-                                <select class="form-control" name="EscutarIdioma3">
+                                <select class="form-control" asp-for="EscutarIdioma3">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -452,7 +457,7 @@
                                     <option value="4">Fluente</option>
                                 </select>     <br />
                                 Fala    <br />
-                                <select class="form-control" name="FalarIdioma3">
+                                <select class="form-control" asp-for="FalarIdioma3">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -462,14 +467,14 @@
                             </div>
                         </div>
                     </div>
-                    <div id="Idioma" class="row innerContent" hidden>
+                    <div id="Idioma" class="row innerContent" @(Model.Idioma4 == EnumIdiomas.None ? "hidden" : "")>
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <input onclick="javascript:excluiIdioma(3)" class="btn btn-danger" type="button" value="Excluir" />    <br />
                         </div>
                         <div class="col-lg-6">
                             <div class="card-body">
                                 Idioma <br />
-                                <select class="form-control" name="Idioma4">
+                                <select class="form-control" asp-for="Idioma4">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Portugues</option>
                                     <option value="2">Ingles</option>
@@ -481,7 +486,7 @@
                                     <option value="8">Japones</option>
                                 </select> <br />
                                 Leitura<br />
-                                <select class="form-control" name="LeituraIdioma4">
+                                <select class="form-control" asp-for="LeituraIdioma4">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -493,7 +498,7 @@
                         <div class="col-lg-6">
                             <div class="card-body">
                                 Escuta <br />
-                                <select class="form-control" name="EscutarIdioma4">
+                                <select class="form-control" asp-for="EscutarIdioma4">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -501,7 +506,7 @@
                                     <option value="4">Fluente</option>
                                 </select>     <br />
                                 Fala    <br />
-                                <select class="form-control" name="FalarIdioma4">
+                                <select class="form-control" asp-for="FalarIdioma4">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -511,14 +516,14 @@
                             </div>
                         </div>
                     </div>
-                    <div id="Idioma" class="row innerContent" hidden>
+                    <div id="Idioma" class="row innerContent" @(Model.Idioma5 == EnumIdiomas.None ? "hidden" : "")>
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <input onclick="javascript:excluiIdioma(4)" class="btn btn-danger" type="button" value="Excluir" />    <br />
                         </div>
                         <div class="col-lg-6">
                             <div class="card-body">
                                 Idioma <br />
-                                <select class="form-control" name="Idioma5">
+                                <select class="form-control" asp-for="Idioma5">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Portugues</option>
                                     <option value="2">Ingles</option>
@@ -530,7 +535,7 @@
                                     <option value="8">Japones</option>
                                 </select> <br />
                                 Leitura<br />
-                                <select class="form-control" name="LeituraIdioma5">
+                                <select class="form-control" asp-for="LeituraIdioma5">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -542,7 +547,7 @@
                         <div class="col-lg-6">
                             <div class="card-body">
                                 Escuta <br />
-                                <select class="form-control" name="EscutarIdioma5">
+                                <select class="form-control" asp-for="EscutarIdioma5">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -550,7 +555,7 @@
                                     <option value="4">Fluente</option>
                                 </select>     <br />
                                 Fala    <br />
-                                <select class="form-control" name="FalarIdioma5">
+                                <select class="form-control" asp-for="FalarIdioma5">
                                     <option value="0">Selecione...</option>
                                     <option value="1">Básico</option>
                                     <option value="2">Intermediário</option>
@@ -562,7 +567,7 @@
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <input id="btnAdicionaIdioma" class="btn btn-success" type="button" value="Adicionar mais" onclick="javascript:adicionaIdioma()"/>    <br />
+                    <input id="btnAdicionaIdioma" class="btn btn-success" type="button" value="Adicionar mais" onclick="javascript:adicionaIdioma()" />    <br />
                 </div>
             </div>
         </div>
